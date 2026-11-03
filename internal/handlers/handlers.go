@@ -44,7 +44,7 @@ func Upload(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := r.ParseMultipartForm(10 << 20); err != nil {
-		http.Error(w, "cannot parse form", http.StatusInternalServerError)
+		http.Error(w, "cannot parse form", http.StatusBadRequest)
 		return
 	}
 
