@@ -50,7 +50,7 @@ func Upload(w http.ResponseWriter, r *http.Request) {
 
 	file, header, err := r.FormFile(formField)
 	if err != nil {
-		http.Error(w, "cannot get uploaded file", http.StatusInternalServerError)
+		http.Error(w, "cannot get uploaded file", http.StatusBadRequest)
 		return
 	}
 	defer file.Close()
